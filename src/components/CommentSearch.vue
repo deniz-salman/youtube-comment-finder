@@ -5,9 +5,9 @@
         <span class="text-lg">Search the comments</span>
       </div>
 
-      <div v-if="$root.video" class="p-4 flex items-start">
+      <div v-if="$root.video" class="p-4 flex flex-col sm:flex-row items-start">
         <img :src="$root.video.snippet.thumbnails.high.url" :alt="$root.video.snippet.title" class="video-thumbnail" />
-        <div class="mt-2 w-3/4">
+        <div class="mt-2 sm:ml-4 w-full sm:w-3/4">
           <h3 class="video-title">{{ $root.video.snippet.title }}</h3>
           <p class="video-description">{{ $root.video.snippet.description }}</p>
           <a :href="`https://www.youtube.com/channel/${$root.video.snippet.channelId}`" target="_blank">
@@ -41,6 +41,7 @@
           </button>
         </div>
       </div>
+
       <div v-if="$root.comments.length > 0" id="comment_list" class="mt-4">
         <span class="text-lg font-semibold m-4">🔍 {{ searched }}</span>
         <div class="overflow-y-auto max-h-[600px] p-4">

@@ -20,18 +20,17 @@
                     <div class="overflow-y-auto max-h-[600px] rounded-lg p-4">
                         <div class="grid grid-cols-1 gap-4">
                             <div v-for="video in videos" :key="video.id.videoId"
-                                class="rounded-lg overflow-hidden flex border p-4 shadow-md">
+                                class="rounded-lg overflow-hidden flex flex-col sm:flex-row border p-4 shadow-md">
                                 <img :src="video.snippet.thumbnails.high.url" :alt="video.snippet.title"
                                     class="video-thumbnail" />
-                                <div class="p-2 w-3/4 h-42">
+                                <div class="p-2 sm:ml-4 w-full sm:w-3/4 h-42">
                                     <h3 class="video-title">{{ video.snippet.title }}</h3>
                                     <p class="video-description">{{ video.snippet.description }}</p>
                                     <a :href="`https://www.youtube.com/channel/${video.snippet.channelId}`"
                                         target="_blank">
                                         <p class="video-channel">{{ video.snippet.channelTitle }}</p>
                                     </a>
-                                    <button @click="selectVideo(video)" class="button">Search this
-                                        video</button>
+                                    <button @click="selectVideo(video)" class="button">Search this video</button>
                                 </div>
                             </div>
                         </div>

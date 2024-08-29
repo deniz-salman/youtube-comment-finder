@@ -16,7 +16,7 @@ body {
 }
 
 .video-thumbnail {
-  @apply w-52 h-32 rounded-lg mr-4;
+  @apply w-52 h-32 rounded-lg sm:mb-0 mb-4;
 }
 
 .video-title {
@@ -36,5 +36,5 @@ body {
 }
 
 .profile-avatar {
-  @apply w-24 h-24 rounded-full mr-4 border shadow-md;
+  @apply w-24 h-24 rounded-full border shadow-md sm:mb-0 mb-4;
 }

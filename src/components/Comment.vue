@@ -1,12 +1,12 @@
 <template>
     <div v-if="authorProfileImageUrl && channelIdValue && authorDisplayName && textDisplay"
-        class="rounded-lg overflow-hidden flex border p-4 shadow-md">
+        class="rounded-lg overflow-hidden flex flex-col sm:flex-row border p-4 shadow-md">
         <img :src="authorProfileImageUrl" class="profile-avatar" />
-        <div>
+        <div class="sm:ml-4">
             <a :href="`https://www.youtube.com/channel/${channelIdValue}`" target="_blank">
                 <h2 class="text-lg font-semibold">{{ authorDisplayName || 'Unknown' }}</h2>
             </a>
-            <p class="text-gray-500 mb-2">{{ textDisplay || 'No comment available' }}</p>
+            <p class="text-gray-500 mb-2 text-sm">{{ textDisplay || 'No comment available' }}</p>
 
             <span
                 class="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
@@ -32,7 +32,6 @@
                     Show comment
                 </a>
             </div>
-
         </div>
     </div>
 </template>
